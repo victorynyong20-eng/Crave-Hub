@@ -1,0 +1,2 @@
+{ "name": "crave-hub", "private": true, "version": "0.1.0", "engines": { "node": ">=18" },
+  "scripts": { "test": "node tests/functions.test.js" } }

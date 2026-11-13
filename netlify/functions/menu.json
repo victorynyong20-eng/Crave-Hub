@@ -1,0 +1,11 @@
+{
+  "currency": "NGN",
+  "delivery": 1000,
+  "meals": {
+    "jollof":   { "name": "Jollof rice with chicken",  "price": 4500 },
+    "coconut":  { "name": "Coconut rice with chicken", "price": 4800 },
+    "yam":      { "name": "Yam and egg sauce",         "price": 3500 },
+    "plantain": { "name": "Plantain and egg sauce",    "price": 3200 },
+    "pasta":    { "name": "Stir-fry pasta",            "price": 3800 }
+  }
+}

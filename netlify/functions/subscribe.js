@@ -29,5 +29,9 @@ exports.handler = L.wrap("subscribe", "POST", async ({ cfg, body, out, log }) =>
 
   log({ action: "subscribe", to: L.mask(email), status: r.status, reqId: r.requestId, codes: L.errCodes(r) });
   if (r.status === 202) return out(200, { ok: true, accepted: true });
-  return out(502, { ok: false, error: "klaviyo_rejected", status: r.status });
+  return out(r.status, {
+  ok: false,
+  error: "klaviyo_rejected",
+  status: r.status,
+  codes: L.errCodes(r)
 });

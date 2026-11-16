@@ -11,10 +11,19 @@ exports.handler = L.wrap("subscribe", "POST", async ({ cfg, body, out, log }) =>
     type: "profile-subscription-bulk-create-job",
     attributes: {
       custom_source: "Crave Hub website newsletter" + (cfg.env === "demo" ? " (demo)" : ""),
-      profiles: { data: [{ type: "profile", attributes: { email,
-        properties: { crave_hub_environment: cfg.env },
-        subscriptions: { email: { marketing: { consent: "SUBSCRIBED", consented_at: new Date().toISOString() } } } } }] },
-    },
+     profiles: { data: [{
+  type: "profile",
+  attributes: {
+    email,
+    subscriptions: {
+      email: {
+        marketing: {
+          consent: "SUBSCRIBED"
+        }
+      }
+    }
+  }
+}] },
     relationships: { list: { data: { type: "list", id: cfg.listId } } },
   } } });
 
